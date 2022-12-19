@@ -1,7 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap'); 
 .container {
   background-color: #333;
-  /* border-color: blue; */
   border: 5px solid #1e1e1e;
   height: 389px;
   width: 290px;
@@ -24,13 +23,9 @@
 
 }
 
-.buttons_container {
+ .buttons_container {
   display: grid;
-  /* grid-template-columns: auto auto auto;
-  height: 330px;
-  width: auto;
-  margin-top: 4px; */
-}
+} 
 
 .buttons {
   height: 50px;

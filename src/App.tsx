@@ -5,19 +5,16 @@ function App() {
   const [inputs, setInputs] = useState("");
   const [output, setOutput] = useState("");
   const [status, setStatus] = useState(true);
-  const ops = ["*", "+", "/", "-", "%"];
+  const operator = ["*", "+", "/", "-", "%"];
 
   const UpdateCalc = (value: any) => {
     if (
-      (ops.includes(value) && inputs === "") ||
-      (ops.includes(value) && ops.includes(inputs.slice(-1)))
+      (operator.includes(value) && inputs === "") ||
+      (operator.includes(value) && operator.includes(inputs.slice(-1)))
     ) {
       return;
-    } else if (ops.includes(value) && inputs.includes(inputs.slice(-1))) {
+    } else if (operator.includes(value) && inputs.includes(inputs.slice(-1))) {
       output === "" ? setInputs(inputs + value) : setInputs(output + value);
-      console.log(output !== "");
-      console.log(ops.includes(value));
-      console.log(inputs.slice(-1));
     } else if (inputs.length <= 15) {
       setInputs(inputs + value);
     } else setOutput("Maximum characters Entered");

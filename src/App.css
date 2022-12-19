@@ -1,70 +1,68 @@
- @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap'); 
-.container {
-  background-color: #333;
-  border: 5px solid #1e1e1e;
-  height: 389px;
-  width: 290px;
-  margin: auto auto auto auto;
-  margin-top: 60px;
+ @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
-}
+ .container {
+   background-color: #333;
+   border: 5px solid #1e1e1e;
+   height: 389px;
+   width: 290px;
+   margin: auto auto auto auto;
+   margin-top: 60px;
 
-.display {
-  height: 60px;
-  width: 286px;
-  margin: 2px;
-  background-color: #252526;
-  grid-template-rows: auto auto;
-  border-color: #181818;
-  border: 1px;
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 15px;
+ }
 
-}
+ .display {
+   height: 60px;
+   width: 286px;
+   margin: 2px;
+   background-color: #252526;
+   grid-template-rows: auto auto;
+   border-color: #181818;
+   border: 1px;
+   color: #fff;
+   font-family: 'Orbitron', sans-serif;
+   font-size: 15px;
+
+ }
 
  .buttons_container {
-  display: grid;
-} 
+   display: grid;
+ }
 
-.buttons {
-  height: 50px;
-  width: 90px;
-  margin-left: 3px;
-  margin-right: 3px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  background-color: #3c3b3f;
-  color: #fff;
-  border: none;
-  font-family: Arial;
-  font-size: 13px;
+ .buttons {
+   height: 50px;
+   width: 90px;
+   margin-left: 3px;
+   margin-right: 3px;
+   margin-top: 2px;
+   margin-bottom: 2px;
+   background-color: #3c3b3f;
+   color: #fff;
+   border: none;
+   font-family: Arial;
+   font-size: 13px;
 
-}
+ }
 
-.buttons:hover {
-  /* background-color: #37353a ; */
-  background-color: #37353a;
-}
+ .buttons:hover {
+   background-color: #37353a;
+ }
 
-.buttons:active {
-  background-color: #252526;
-}
+ .buttons:active {
+   background-color: #252526;
+ }
 
+ .input {
+   height: 30px;
+   width: 286px;
+   display: flex;
+   flex-direction: row;
+   text-align: left;
+ }
 
-
-.input {
-  height: 30px;
-  width: 286px;
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-}
-
-.output {
-  height: 30px;
-  width: 286px;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-}
+ .output {
+   height: 30px;
+   width: 286px;
+   display: flex;
+   flex-direction: column;
+   text-align: right;
+ }

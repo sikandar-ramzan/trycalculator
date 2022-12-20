@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
 import { BsPower, BsBackspace } from "react-icons/bs";
+import Button from "./Button";
 function App() {
   const [inputs, setInputs] = useState("");
   const [output, setOutput] = useState("");
   const [status, setStatus] = useState(true);
   const operator = ["*", "+", "/", "-", "%"];
 
-  const UpdateCalc = (value: any) => {
+  const getInputs = (value: any) => {
     if (
       (operator.includes(value) && inputs === "") ||
       (operator.includes(value) && operator.includes(inputs.slice(-1)))
@@ -20,7 +21,7 @@ function App() {
     } else setOutput("Maximum characters Entered");
   };
 
-  const ClearDigits = () => {
+  const clearInputs = () => {
     if (inputs === "") {
       return;
     } else if (output !== "") {
@@ -31,10 +32,10 @@ function App() {
     }
   };
 
-  const Calculate = (value: any) => {
+  const calculateResult = (value: any) => {
     setOutput(eval(inputs).toString());
   };
-  const TurnOnOff = () => {
+  const togleState = () => {
     if (status === true) {
       setStatus(false);
     } else {
@@ -50,142 +51,43 @@ function App() {
         <div className="display">
           <div className="input">{inputs || ""}</div>
           <div className="output">
-            {" "}
-            <span>{output}</span>{" "}
+            <span>{output}</span>
           </div>
         </div>
         <div className="button_container">
-          <button className="buttons" onClick={TurnOnOff}>
-            <span>
-              <BsPower color={status ? "red" : "green"} />
-            </span>
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("/")}
-            disabled={status}
-          >
-            /
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("%")}
-            disabled={status}
-          >
-            %
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("*")}
-            disabled={status}
-          >
-            x
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("-")}
-            disabled={status}
-          >
-            -
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("+")}
-            disabled={status}
-          >
-            +
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("7")}
-            disabled={status}
-            value={7}
-          >
-            7
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("8")}
-            disabled={status}
-            value={8}
-          >
-            8
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("9")}
-            disabled={status}
-            value={9}
-          >
-            9
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("4")}
-            disabled={status}
-            value={4}
-          >
-            4
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("5")}
-            disabled={status}
-            value={5}
-          >
-            5
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("6")}
-            disabled={status}
-            value={6}
-          >
-            6
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("1")}
-            disabled={status}
-            value={1}
-          >
-            1
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("2")}
-            disabled={status}
-            value={2}
-          >
-            2
-          </button>
-          <button
-            className="buttons"
-            onClick={() => UpdateCalc("3")}
-            disabled={status}
-            value={3}
-          >
-            3
-          </button>
-          <button
-            className="buttons"
-            value="clear"
-            onClick={ClearDigits}
-            disabled={status}
-          >
-            <BsBackspace />
-          </button>
-          <button
-            className="buttons "
-            onClick={() => UpdateCalc("0")}
-            disabled={status}
-            value={0}
-          >
-            0
-          </button>
-          <button className="buttons" value="=" onClick={Calculate}>
-            =
-          </button>
+          <Button
+            symbol={
+              <span>
+                <BsPower color={status ? "red" : "green"} />
+              </span>
+            }
+            handleClick={togleState}
+          />
+          <Button symbol="/" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="%" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="*" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="-" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="+" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="7" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="8" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="9" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="4" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="5" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="6" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="1" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="2" handleClick={getInputs} isdisabled={status} />
+          <Button symbol="3" handleClick={getInputs} isdisabled={status} />
+          <Button
+            symbol={<BsBackspace />}
+            handleClick={clearInputs}
+            isdisabled={status}
+          />
+          <Button symbol="0" handleClick={getInputs} isdisabled={status} />
+          <Button
+            symbol="="
+            handleClick={calculateResult}
+            isdisabled={status}
+          />
         </div>
       </div>
     </>
